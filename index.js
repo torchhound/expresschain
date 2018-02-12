@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use('/', api);
 
 http.listen(port, function() {
-	console.log("Listening on port" + port);
-}
+	console.log("Listening on port " + port);
+});
 
 module.exports = app;

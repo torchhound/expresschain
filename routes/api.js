@@ -18,7 +18,7 @@ router.get('/mine', function(req, res, next) {
 	let block = blockchain.newBlock(proof, previousHash);
 
 	let response = {
-		'message': 'New Block Mined",
+		'message': 'New Block Mined',
 		'index': block.index,
 		'transactions': block.transactions,
 		'proof': block.proof,
@@ -26,7 +26,7 @@ router.get('/mine', function(req, res, next) {
 	};
 
 	res.status(200).json(JSON.stringify(response));
-}
+});
 
 router.post('/transactions/new', function(req, res, next) {
 	let jsonOut = JSON.parse(req.body);
@@ -36,10 +36,10 @@ router.post('/transactions/new', function(req, res, next) {
 		index = blockchain.newTransaction(jsonOut.sender, jsonOut.recipient, jsonOut.amount)
 		res.status(201).json(JSON.stringify({'message': 'Transaction will be added to Block ${index}'}));
 	}
-}
+});
 
 router.get('/chain', function(req, res, next) {
 	res.status(200).json(JSON.stringify({'chain': blockchain.chain, 'length': blockchain.chain.length}));
-}
+});
 
 module.exports = router;
