@@ -29,8 +29,8 @@ router.get('/mine', function(req, res, next) {
 });
 
 router.post('/transactions/new', function(req, res, next) {
-	if (req.body.sender === "" || req.body.recipient === "" || req.body.amount === "") {
-		res.status(400).send("Missing Values in JSON Request");	
+	if (req.body.sender === '' || req.body.recipient === '' || req.body.amount === '') {
+		res.status(400).send('Missing Values in JSON Request');	
 	} else {
 		index = blockchain.newTransaction(req.body.sender, req.body.recipient, req.body.amount)
 		res.status(201).json(JSON.stringify({'message': 'Transaction will be added to Block ' + index}));
@@ -39,6 +39,29 @@ router.post('/transactions/new', function(req, res, next) {
 
 router.get('/chain', function(req, res, next) {
 	res.status(200).json(JSON.stringify({'chain': blockchain.chain, 'length': blockchain.chain.length}));
+});
+
+router.post('/nodes/register', function(req, res, next) {
+	let nodes = req.body.nodes;
+
+	if (!nodes) {
+		res.status(400).send('Error: No nodes were supplied');
+	} else {
+		for (x = 0; x < nodes.length; x++) {
+			blockchain.registerNode(node);
+		}
+		res.status(201).json(JSON.stringify({'message': 'New nodes have been added', 'totalNodes': blockchain.nodes}));
+	}
+});
+
+router.get('/nodes/resolve', function(req, res, next) {
+	let replaced = blockchain.resolveConflicts();
+
+	if (replaced) {
+		res.status(200).json(JSON.stringify({'message': 'Our chain was superseded', 'newChain': blockchain.chain}));
+	} else {
+		res.status(200).json(JSON.stringify({'message': 'Our chain was superseded', 'newChain': blockchain.chain}));
+	}
 });
 
 module.exports = router;
