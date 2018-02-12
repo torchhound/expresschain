@@ -5,7 +5,7 @@ const Blockchain = require('../models/blockchain');
 
 var router = express.Router();
 var blockchain = new Blockchain();
-const nodeIdentifier = uuidv4().toString().replace('-', '');
+const nodeIdentifier = uuidv4().toString();
 
 router.get('/mine', function(req, res, next) {
 	let lastBlock = blockchain.lastBlock();
@@ -29,12 +29,11 @@ router.get('/mine', function(req, res, next) {
 });
 
 router.post('/transactions/new', function(req, res, next) {
-	let jsonOut = JSON.parse(req.body);
-	if (jsonOut.sender === "" || jsonOut.recipient === "" || jsonOut.amount === "") {
+	if (req.body.sender === "" || req.body.recipient === "" || req.body.amount === "") {
 		res.status(400).send("Missing Values in JSON Request");	
 	} else {
-		index = blockchain.newTransaction(jsonOut.sender, jsonOut.recipient, jsonOut.amount)
-		res.status(201).json(JSON.stringify({'message': 'Transaction will be added to Block ${index}'}));
+		index = blockchain.newTransaction(req.body.sender, req.body.recipient, req.body.amount)
+		res.status(201).json(JSON.stringify({'message': 'Transaction will be added to Block ' + index}));
 	}
 });
 

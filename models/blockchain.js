@@ -19,7 +19,7 @@ module.exports = class Blockchain {
 
 	newTransaction(sender, recipient, amount){
 		this.currentTransactions.push(new Transaction(sender, recipient, amount));
-		return this.lastBlock() + 1;
+		return this.lastBlock().index + 1;
 	}
 
 	hash(block){
@@ -27,7 +27,7 @@ module.exports = class Blockchain {
 	}
 
 	lastBlock(){
-		return this.chain[-1];
+		return this.chain[this.chain.length - 1];
 	}
 
 	proofOfWork(lastProof) {
