@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
-const Transaction = require('transaction');
-const Block = require('block');
+const Transaction = require('./transaction');
+const Block = require('./block');
 
 module.exports = class Blockchain {
 	constructor() {
