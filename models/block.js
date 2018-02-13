@@ -1,10 +1,12 @@
 /**
-*This class represents a block in the blockchain.
+*@class Block
+*@classdesc This class represents a block in the blockchain.
 */
 module.exports = class Block {
 
 	/**
 	*Constructor for Block class
+	*@constructs
 	*@param {number} index - The index of this Block
 	*@param {Array} transactions - An Array of transactions
 	*@param {number} proof - Proof of work

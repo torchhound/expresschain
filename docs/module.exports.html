@@ -28,9 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>exports<span class="signature">(index, transactions, proof, previousHash)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">This class represents a block in the blockchain.</div>
+        <h2><span class="attribs"><span class="type-signature"></span></span>exports<span class="signature">()</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -41,7 +39,1560 @@
         
 
     
-    <h2>Constructor</h2>
+
+    
+    <h4 class="name" id="exports"><span class="type-signature"></span>new exports<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Constructor for Blockchain class
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="hash"><span class="type-signature"></span>hash<span class="signature">(block)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates a SHA256 hash string for a given Block
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>block</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A Block Object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    hash - A SHA256 hash of the Block Object
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="lastBlock"><span class="type-signature"></span>lastBlock<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns the last Block on the chain
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Block - The last block on the chain
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="newBlock"><span class="type-signature"></span>newBlock<span class="signature">(proof, previousHash<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates a new Block and pushes it to the chain
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>proof</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Proof of work</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>previousHash</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Object
+                
+                </td>
+            
+
+            <td class="description last">Hash of previous Block</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    block - A new Block Object to be added to the chain
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="newTransaction"><span class="type-signature"></span>newTransaction<span class="signature">(sender, recipient, amount)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Pushes a new Transaction to the array of transactions
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sender</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The sender's identifier</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recipient</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The recipient's identifier</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount to be transferred</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="proofOfWork"><span class="type-signature"></span>proofOfWork<span class="signature">(lastProof)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Finds a number such that a hash of the last proof and a new proof contain 4 ending zeroes
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lastProof</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The previous proof</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line72">line 72</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    proof - The next proof
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="registerNode"><span class="type-signature"></span>registerNode<span class="signature">(address)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Adds a node's address to the Set of addresses known to the current node
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The url of a node to be added</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line96">line 96</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="resolveConflicts"><span class="type-signature">(async) </span>resolveConflicts<span class="signature">(res)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Emits an Express response based on the length and validity of a chain. If a chain is valid and longer and the current chain it supplants it.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An Express response object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line132">line 132</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="validChain"><span class="type-signature"></span>validChain<span class="signature">(chain)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks a blockchain for valid block hashes and valid proofs
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>chain</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An Array of Block Objects</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line106">line 106</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    validity - Whether a blockchain is valid or not
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="validProof"><span class="type-signature"></span>validProof<span class="signature">(lastProof, proof)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Hashes the new proof and the previous proof and returns a boolean if the new proof is valid
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lastProof</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The previous proof</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>proof</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The next proof</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line86">line 86</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    validity - Whether a proof is valid or not
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>exports<span class="signature">(index, transactions, proof, previousHash)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
     
 
     
@@ -215,7 +1766,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="block.js.html">block.js</a>, <a href="block.js.html#line4">line 4</a>
+        <a href="block.js.html">block.js</a>, <a href="block.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -370,7 +1921,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line49">line 49</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -478,7 +2029,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line57">line 57</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -690,7 +2241,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line26">line 26</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -893,7 +2444,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line39">line 39</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -1028,7 +2579,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line66">line 66</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -1185,7 +2736,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line90">line 90</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line96">line 96</a>
     </li></ul></dd>
     
 
@@ -1320,7 +2871,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line126">line 126</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line132">line 132</a>
     </li></ul></dd>
     
 
@@ -1455,7 +3006,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line100">line 100</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line106">line 106</a>
     </li></ul></dd>
     
 
@@ -1635,1562 +3186,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line80">line 80</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    validity - Whether a proof is valid or not
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2><span class="attribs"><span class="type-signature"></span></span>exports<span class="signature">()</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description">This class contains the blockchain and associated methods.</div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="exports"><span class="type-signature"></span>new exports<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line12">line 12</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="hash"><span class="type-signature"></span>hash<span class="signature">(block)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Creates a SHA256 hash string for a given Block
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>block</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">A Block Object</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line49">line 49</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    hash - A SHA256 hash of the Block Object
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="lastBlock"><span class="type-signature"></span>lastBlock<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Returns the last Block on the chain
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line57">line 57</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Block - The last block on the chain
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="newBlock"><span class="type-signature"></span>newBlock<span class="signature">(proof, previousHash<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Creates a new Block and pushes it to the chain
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>proof</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last">Proof of work</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>previousHash</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    Object
-                
-                </td>
-            
-
-            <td class="description last">Hash of previous Block</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    block - A new Block Object to be added to the chain
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="newTransaction"><span class="type-signature"></span>newTransaction<span class="signature">(sender, recipient, amount)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Pushes a new Transaction to the array of transactions
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>sender</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The sender's identifier</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>recipient</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The recipient's identifier</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>amount</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The amount to be transferred</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line39">line 39</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="proofOfWork"><span class="type-signature"></span>proofOfWork<span class="signature">(lastProof)</span><span class="type-signature"> &rarr; {number}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Finds a number such that a hash of the last proof and a new proof contain 4 ending zeroes
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>lastProof</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The previous proof</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line66">line 66</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    proof - The next proof
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="registerNode"><span class="type-signature"></span>registerNode<span class="signature">(address)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Adds a node's address to the Set of addresses known to the current node
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>address</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The url of a node to be added</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line90">line 90</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="resolveConflicts"><span class="type-signature">(async) </span>resolveConflicts<span class="signature">(res)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Emits an Express response based on the length and validity of a chain. If a chain is valid and longer and the current chain it supplants it.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>res</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An Express response object</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line126">line 126</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="validChain"><span class="type-signature"></span>validChain<span class="signature">(chain)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Checks a blockchain for valid block hashes and valid proofs
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>chain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An Array of Block Objects</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line100">line 100</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    validity - Whether a blockchain is valid or not
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="validProof"><span class="type-signature"></span>validProof<span class="signature">(lastProof, proof)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Hashes the new proof and the previous proof and returns a boolean if the new proof is valid
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>lastProof</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The previous proof</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>proof</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The next proof</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line80">line 80</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line86">line 86</a>
     </li></ul></dd>
     
 
@@ -3262,8 +3258,6 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>exports<span class="signature">(sender, recipient, amount)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">This class represents a transaction on the blockchain.</div>
-        
     
 </header>
 
@@ -3272,8 +3266,6 @@
     
         
 
-    
-    <h2>Constructor</h2>
     
 
     
@@ -3424,7 +3416,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="transaction.js.html">transaction.js</a>, <a href="transaction.js.html#line4">line 4</a>
+        <a href="transaction.js.html">transaction.js</a>, <a href="transaction.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -3579,7 +3571,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line49">line 49</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -3687,7 +3679,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line57">line 57</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -3899,7 +3891,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line26">line 26</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -4102,7 +4094,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line39">line 39</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -4237,7 +4229,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line66">line 66</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -4394,7 +4386,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line90">line 90</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line96">line 96</a>
     </li></ul></dd>
     
 
@@ -4529,7 +4521,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line126">line 126</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line132">line 132</a>
     </li></ul></dd>
     
 
@@ -4664,7 +4656,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line100">line 100</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line106">line 106</a>
     </li></ul></dd>
     
 
@@ -4844,7 +4836,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line80">line 80</a>
+        <a href="blockchain.js.html">blockchain.js</a>, <a href="blockchain.js.html#line86">line 86</a>
     </li></ul></dd>
     
 
@@ -4910,13 +4902,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports.html">exports</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Block.html">Block</a></li><li><a href="Blockchain.html">Blockchain</a></li><li><a href="module.exports.html">exports</a></li><li><a href="Transaction.html">Transaction</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Feb 13 2018 03:48:06 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Feb 13 2018 03:55:03 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>

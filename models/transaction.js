@@ -1,10 +1,12 @@
 /**
-*This class represents a transaction on the blockchain.
+*@class Transaction
+*@classdesc This class represents a transaction on the blockchain.
 */
 module.exports = class Transaction {
 
 	/**
 	*Constructor for Transaction class
+	*@constructs
 	*@param {string} sender - The sender's identifier
 	*@param {string} recipient - The recipient's identifier
 	*@param {string} amount - The amount to be transferred

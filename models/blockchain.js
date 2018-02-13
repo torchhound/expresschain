@@ -7,9 +7,15 @@ const Transaction = require('./transaction');
 const Block = require('./block');
 
 /**
-*This class contains the blockchain and associated methods.
+*@class Blockchain
+*@classdesc This class contains the blockchain and associated methods.
 */
 module.exports = class Blockchain {
+
+	/**
+	*Constructor for Blockchain class
+	*@constructs
+	*/
 	constructor() {
 		this.chain = [];
 		this.currentTransactions = [];
