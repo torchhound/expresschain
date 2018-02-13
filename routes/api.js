@@ -47,10 +47,14 @@ router.post('/nodes/register', function(req, res, next) {
 	if (!nodes) {
 		res.status(400).send('Error: No nodes were supplied');
 	} else {
-		for (x = 0; x < nodes.length; x++) {
-			blockchain.registerNode(node);
+		for (var x = 0; x < nodes.length; x++) {
+			blockchain.registerNode(nodes[x]);
 		}
-		res.status(201).json(JSON.stringify({'message': 'New nodes have been added', 'totalNodes': blockchain.nodes}));
+		let nodesOut = [];
+		blockchain.nodes.forEach(function(value) {
+			nodesOut.push(value);
+		});
+		res.status(201).json(JSON.stringify({'message': 'New nodes have been added', 'totalNodes': nodesOut}));
 	}
 });
 
@@ -60,7 +64,7 @@ router.get('/nodes/resolve', function(req, res, next) {
 	if (replaced) {
 		res.status(200).json(JSON.stringify({'message': 'Our chain was superseded', 'newChain': blockchain.chain}));
 	} else {
-		res.status(200).json(JSON.stringify({'message': 'Our chain was superseded', 'newChain': blockchain.chain}));
+		res.status(200).json(JSON.stringify({'message': 'Our chain is authoritative', 'chain': blockchain.chain}));
 	}
 });
 

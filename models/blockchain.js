@@ -74,22 +74,29 @@ module.exports = class Blockchain {
 	}
 
 	resolveConflicts() {
-		let neighbors = this.nodes;
+		let neighbors = [];
+		this.nodes.forEach(function(value) {
+			neighbors.push(value);
+		});
 		let newChain = null;
 		let maxLength = this.chain.length;
 
-		for (x = 0; x < neighbors.length; x++) {
-			got(neighbors[x] + '/chain', { json: true }).then(response => {
-				let length = response.body.length;
-				let chain = response.body.chain;
+		for (var x = 0; x < neighbors.length; x++) {
+			(async () => {
+				try {
+					const response = await got(neighbors[x] + '/chain', {json: true});
+					let length = response.body.length;
+					let chain = response.body.chain;
+					console.log("length: " + length + " chain: " + chain);
 
-				if (length > max_length && this.validChain(chain)) {
-					maxLength = length;
-					newChain = chain;
+					if (length > max_length && this.validChain(chain)) {
+						maxLength = length;
+						newChain = chain;
+					}
+				} catch(error) {
+					console.log(error.response.body);
 				}
-			}).catch(error => {
-				console.log(error.response.body);
-			});
+			})();
 		}
 
 		if (newChain) {

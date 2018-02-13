@@ -2,9 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const api = require('./routes/api');
-
-var config = require('./config');
-const port = config.port;
+var port = process.env.PORT || 5000;
 const app = express();
 const http = require('http').Server(app);
 
