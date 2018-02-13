@@ -73,37 +73,41 @@ module.exports = class Blockchain {
 		return true;
 	}
 
-	resolveConflicts() {
+	async resolveConflicts() {
 		let neighbors = [];
 		this.nodes.forEach(function(value) {
 			neighbors.push(value);
 		});
-		let newChain = null;
-		let maxLength = this.chain.length;
-
-		for (var x = 0; x < neighbors.length; x++) {
-			(async () => {
+		var newChain = null;
+		var maxLength = this.chain.length;
+		(async () => {
+			for (var x = 0; x < neighbors.length; x++) {
 				try {
-					const response = await got(neighbors[x] + '/chain', {json: true});
-					let length = response.body.length;
-					let chain = response.body.chain;
-					console.log("length: " + length + " chain: " + chain);
+					const response = await got('http://' + neighbors[x] + '/chain', {json: true});
+					let responseOut = JSON.parse(response.body);
+					let length = responseOut.length;
+					let chain = responseOut.chain;
+					console.log("length: " + length + " potentialChain: " + chain);
+					console.log("maxLength: " + maxLength + " currentChain: " + this.chain);
 
-					if (length > max_length && this.validChain(chain)) {
+					if (length > maxLength && this.validChain(chain)) {
+						console.log("new chain!");
 						maxLength = length;
 						newChain = chain;
 					}
+
 				} catch(error) {
-					console.log(error.response.body);
+					console.log(error);
 				}
-			})();
-		}
-
-		if (newChain) {
-			this.chain = newChain;
-			return true;
-		}
-
-		return false;
+			}
+		})().then(_ => {
+			if (newChain) {
+				console.log("return true");
+				this.chain = newChain;
+				return true;
+			}
+			console.log("return false");
+			return false;
+		});
 	}
 }

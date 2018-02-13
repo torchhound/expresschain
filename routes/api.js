@@ -59,9 +59,9 @@ router.post('/nodes/register', function(req, res, next) {
 });
 
 router.get('/nodes/resolve', function(req, res, next) {
-	let replaced = blockchain.resolveConflicts();
-
-	if (replaced) {
+	let result = blockchain.resolveConflicts();
+	console.log(result);
+	if (result === true) {
 		res.status(200).json(JSON.stringify({'message': 'Our chain was superseded', 'newChain': blockchain.chain}));
 	} else {
 		res.status(200).json(JSON.stringify({'message': 'Our chain is authoritative', 'chain': blockchain.chain}));
