@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const url = require('url');
 const got = require('got');
+const express = require('express');
 
 const Transaction = require('./transaction');
 const Block = require('./block');
@@ -73,7 +74,7 @@ module.exports = class Blockchain {
 		return true;
 	}
 
-	async resolveConflicts() {
+	async resolveConflicts(res) {
 		let neighbors = [];
 		this.nodes.forEach(function(value) {
 			neighbors.push(value);
@@ -104,10 +105,10 @@ module.exports = class Blockchain {
 			if (newChain) {
 				console.log("return true");
 				this.chain = newChain;
-				return true;
+				res.status(200).json(JSON.stringify({'message': 'Our chain was superseded', 'newChain': this.chain}));
 			}
 			console.log("return false");
-			return false;
+			res.status(200).json(JSON.stringify({'message': 'Our chain is authoritative', 'chain': this.chain}));
 		});
 	}
 }
