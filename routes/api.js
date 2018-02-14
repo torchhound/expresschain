@@ -33,7 +33,7 @@ router.post('/transactions/new', function(req, res, next) {
 		res.status(400).send('Missing Values in JSON Request');	
 	} else {
 		index = blockchain.newTransaction(req.body.sender, req.body.recipient, req.body.amount)
-		res.status(201).json(JSON.stringify({'message': 'Transaction will be added to Block ' + index}));
+		res.status(201).json(JSON.stringify({'message': 'Transaction will be added', 'index': 'Block index: ' + index}));
 	}
 });
 
